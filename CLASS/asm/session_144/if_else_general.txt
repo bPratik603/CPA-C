@@ -1,0 +1,30 @@
+if(lhs R rhs){
+	BLOCK if 
+}else{
+	BLOCK else 
+}
+
+OUT STATEMENT 
+///////////////////////////////////////////
+
+
+# evaluate lhs into r1 (take as many instructions 
+# as required 
+movl 	lhs, %r1 
+
+# evaluate rhs into r2 (take as many instructiuons as 
+# required) 
+
+movl rhs, %r2 
+
+cmpl	%r2, %r1 
+jnR		else_branch 
+	
+	BLOCK if ASSEMBLY 
+
+	jmp	 out_block 
+else_branch: 
+	BLOCK else ASSEMBLY
+
+out_block:
+	OUT STATEMENT ASSEMBLY 

@@ -1,0 +1,27 @@
+void test(void)
+{
+    int n; 
+}
+
+//  Local data definition statement without keyword static 
+
+//  Storage strategy: Allocated newly per function call.
+//  Time of allocation: time of function 
+//  Time of de-allocation (freeing): return of function 
+//  Storage place: stack frame of the function created in 
+//  stack section in response to function call
+
+//  Because it is allocated per call and freed at the end of the 
+//  call, it cannot retain value across two successive calls 
+
+
+//  Re-entrant function: 
+//      A function is re-entrant if its  another instance 
+//      may be spawned while its one instance is already 
+//      going on. 
+
+//  
+//  Re-entrant functions appear in three scenarios 
+//  1) Recursion 
+//  2) Multithreading (Reentracy of kind 1)
+//  3) Interrupt handling (asynchronous calls) (Reentrancy of kind 2)

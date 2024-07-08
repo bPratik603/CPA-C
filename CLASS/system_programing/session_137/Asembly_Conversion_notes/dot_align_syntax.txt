@@ -1,0 +1,17 @@
+.align boundary 
+
+boundary must be a power of 2 
+
+.align 1    # byte boundary 
+.align 2    # word boundary 
+.align 4    # double word boundary 
+.align 8    # quad boundary 
+.align 16   # paragraph boundary 
+.align 32 
+.align 64 
+.align 128 
+.align 256 
+.align 512
+.align 1024 
+.align 2048 
+.align 4096  # page boundary 

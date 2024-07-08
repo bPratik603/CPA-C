@@ -1,0 +1,64 @@
+/* Push functions */
+void push_back(struct vector_int* p_vec_int, int new_data); 
+/* 
+    @param1: in param: instance of vector 
+    @param2: in param: new data 
+
+    data in new_data(@param2) must appear at the end of array inside 
+    p_vec_int(@param1)
+
+    Size of internal array, inside p_vec_int(@param1)
+    is incremented by 1. 
+
+    No data movement is necessary. 
+
+*/ 
+
+void push_front(struct vector_int* p_vec_int, int new_data); 
+/* 
+    @param1: p_vec_int: in param: Pointer to dynamically allocated 
+                                  instance of struct vec_int 
+    
+    @param2: new_data: in param:  new data to be inserted at front. 
+
+    Internal array of p_vec_int(@param1), is incremented in size by 1. 
+    All elements are shifted to their right by 1 place. 
+    new_data(@param2) is insreted at index 0. 
+
+*/ 
+
+int push_at_index(struct vector_int* p_vec_int, size_t index, int new_data); 
+/* 
+    @param1: p_vec_int:     in param:   pointer to dynamic instance of struct vec_int
+    @param2: index:         in param:   valid index inside array of p_vec_int(@param1)
+                                        at which new data must be put 
+    @param3: new_data:      in param:   data value that must be inserted at index(@param2) 
+
+    Internal array of p_vec_int(@param1) will be resized to hold one more than 
+    existing number of elements. 
+
+    All data values from index(@param2) to old_size - 1 will be moved to once place right, 
+    index(@param2) + 1 to new_size - 1. 
+
+    new data (@param2) will be assigned to index(@param2)
+
+*/ 
+
+/* Pop functions */
+int pop_back(struct vector_int* p_vec_int, int* p_back_data); 
+int pop_front(struct vector_int* p_vec_int, int* p_front_data); 
+int pop_index(struct  vector_int* p_vec_int, size_t index, int* p_data); 
+
+/* get & set functions */
+int get_index(struct vector_int* p_vec_int, size_t index, int* p_data); 
+int set_index(struct vector_int* p_vec_int, size_t index, int new_data); 
+
+////////////////////////////////////////////////////////////////////////////////////
+
+If you can observe yourself without trying to change it 
+(without justification, condemnation) then what you obsreve 
+undergoes transformation. 
+
+- J. Krishnamurti. 
+
+

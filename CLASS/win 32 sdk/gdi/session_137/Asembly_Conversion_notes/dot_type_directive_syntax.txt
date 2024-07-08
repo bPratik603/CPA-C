@@ -1,0 +1,22 @@
+General Syntax: 
+
+.type variable_name, @object 
+.type variable_name, @function 
+
+//////////////////////////////////////
+int n; 
+
+int main(){
+
+}
+//////////////////////////////////////
+
+n: 
+.int 100 
+
+main: 
+    pushl %ebp 
+
+.type n, @object 
+
+.type main, @function 

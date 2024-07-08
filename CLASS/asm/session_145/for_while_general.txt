@@ -1,0 +1,21 @@
+# One or more instructions for loop variable initialization 
+
+
+movl 	$0, i 
+jmp 	cond 
+body: 
+	# Translation of body 
+
+
+	# Loop variable modification 
+	addl	$1, i 
+cond: 
+# Evaluate the condition for truthness 
+
+
+jR 	body
+
+# OUT STATEMENT ASSEMBLY  
+
+
+

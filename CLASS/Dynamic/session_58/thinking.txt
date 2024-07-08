@@ -1,0 +1,36 @@
+1) Program 1 -> p01.c
+
+    The main() function does dynamic memory allocation for array. 
+    But it does not set the values for array element. 
+
+    instead it sends the base address of array and the array size 
+    to a function named fill array which populates the array elements 
+    with valid values. 
+
+    On returning from fill_array(), the main function again calls 
+    function show_array() to which it sends the base address of array 
+    and its size. The show array function displays the values of array 
+    elements which are consistent with the values set in fill array. 
+
+    On returning from fill array, the main() function frees the memory 
+    allocated to array using free() function. 
+
+    Role of main(): 
+        allocate memory to array 
+        free memory allocated to array 
+
+    Role of fill_array(): 
+        Accept base address and size of array from main() 
+        and populate array elements with values based on their indices. 
+
+    Role of show_array(): 
+        Accept base address and size of array form main() and 
+        display the contents of array elements.  
+
+2) Program 2 -> p02.c 
+
+    The main() function declares a pointer p and integer N to store 
+    the base address and size of array respectively. The main() function 
+    initialises pointer 0 and N to -1 (i.e. invalid values of pointer and size)
+
+    The main() function calls the get_array() function 

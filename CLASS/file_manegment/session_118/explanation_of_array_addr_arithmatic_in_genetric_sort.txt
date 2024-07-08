@@ -1,0 +1,27 @@
+void sort(struct student* p_student, int N, int(*compare)(struct student*, struct student*)))
+{
+    p_student[i]; 
+}
+
+p_student[i] == p_student + i == address in p_student + i * sizeof(struct student)
+
+CONCLUSION: When type of array element is known we can readily index the array using 
+subscript operator as the C compiler will take care of pointer arithmetic based 
+on ARRAY ELEMENT TYPE. (and its size)
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+In generic sort the type of variable accepting base address of array is void*. 
+This makes arr variable capable of accepting base address of array of any type. 
+
+But while implementing cpa_sort() we wouldn't know the EXACT TYPE of array element. 
+and therefore, we cannot access ith element of arr using arr[i] expression! 
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+How to access i-th element of arr? 
+arr     i 
+
+arr + i * nmem
+
+(char*)arr + i * nmem == address of ith element of array of whichever

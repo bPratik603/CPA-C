@@ -1,0 +1,79 @@
+if(lhs R rhs){
+	IF BLOCK 
+}else if(lhs1 R1 rhs1){
+	ELSE IF 1 BLOCK 
+}else if(lhs2 R2 rhs2){
+	ELSE IF 2 BLOCK 
+}.
+.
+.
+.
+}else if(lhsn Rn rhsn){
+	ELSE IF N BLOCK 
+}else{
+	ELSE BLOCK 
+}
+OUT STATEMENT BLOCK
+
+#---------------------------------------------
+
+movl 	lhs, %r1 
+movl	rhs, %r2 
+cmpl	%r2, %r1 
+jnR		else_if_1 
+
+	IF BLOCK ASSEMBLY
+
+jmp		out_block 
+
+else_if_1: 
+movl	lhs1, %r1
+movl	rhs1, %r2 
+cmpl	%r2, %r1 
+jnR1 	else_if_2 
+
+	ELSE IF 1 BLOCK ASSEMBLY 
+
+jmp		out_block 
+
+else_if_2: 
+movl	lhs2, %r1 
+movl	rhs2, %r2 
+cmpl	%r2, %r1 
+jnR2 	else_if_3 
+
+	ELSE IF 2 BLOCK ASSEMBLY 
+
+jmp		out_block
+
+else_if_3: 
+,
+,
+,
+else_if_n: 
+movl	lhsn, %r1 
+movl	rhsn, %r2 
+cmpl	%r2, %r1 
+jnRn	else_block
+
+	ELSE IF N BLOCK ASSEMBLY 
+
+jmp		out_block 
+
+else_block: 
+
+	ELSE BLOCK ASSEMBLY 
+
+out_block: 
+
+	OUT BLOCK ASSEMBLY 
+
+
+
+
+
+
+
+
+
+

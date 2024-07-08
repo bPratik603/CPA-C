@@ -1,0 +1,19 @@
+# make menuconfig 
+# make bzImage 
+# make modules 
+# make modules_install 
+# make install 
+
+kernel.org 
+    Linux kernel tar.bz2 
+
+# cd /usr/src 
+# cp /root/Downloads/linux-5.2.0.tar.bz2 .
+# tar -xvf linux-5.2.0.tar.bz2 
+# cd linux-5-2.0 
+# make menuconfig 
+# make bzImage 
+# make modules 
+# make modules_install 
+# make install 
+# make clean 

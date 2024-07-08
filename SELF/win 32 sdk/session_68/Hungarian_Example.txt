@@ -1,0 +1,16 @@
+#include <Windows.h> 
+#include <stdio.h> 
+#include <stdlib.h> 
+
+#define ARRY_SIZE   8 
+
+int main(void)
+{
+    int iArr[ARRAY_SIZE]; 
+    int iCnt; 
+
+    for(iCnt = 0; iCnt < ARRAY_SIZE; ++iCnt)
+        iArr[iCnt] = iCnt + 1; 
+
+    return (EXIT_SUCCESS); 
+}

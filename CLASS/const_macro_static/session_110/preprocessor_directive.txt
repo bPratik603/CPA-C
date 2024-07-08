@@ -1,0 +1,210 @@
+There are some activities needed to be performed that are not part of 
+C Programming Language Syntax. 
+
+Every C implementation comes with a tool known as C PreProcessor which 
+does important tasks that cannot be given to compiler. 
+
+Why Name Preprocessor? 
+
+Because translating program from C to assembly is referred to as 
+PROCESSING. . . . 
+
+C Programmer writes certain lines in C source code that are not understandable 
+by Compiler (because they are not statements of C). Preprocessor scans the C file 
+for such statements before the file is sent to compiler for processing. 
+Preprocessor removes all such statements and replaces them statements of C language. 
+
+This activity can also be termed as processing. Its a processing done before main 
+processing, therefore the term PREPROCESSING. 
+
+Preprocessor Diretive: 
+    Preprocessor directive is a syntax understood by C Preprocessor and programmer 
+    can use this mechanism to DIRECT PREPROCESSOR regarding the actions it must take. 
+
+    Directives given by C Programmer to C Preprocessor through syntax understandable 
+    by C Preprocessor (but not C compiler) are known as PREPROCESSOR DIRECTIVE. 
+
+Every Preprocessor Directive Starts from # 
+
+e.g. 
+
+#define 
+#ifdef 
+#ifndef 
+#else 
+#endif 
+#pragma 
+
+Principle: 
+    Any statement in C/C++ source code starting from # is NOT a statement 
+    understood by C/C++ compiler as C/C++ syntax do not allow any statement 
+    starting from # 
+
+    And yet, every non-trivial C/C++ source code contains several statements 
+    starting from # 
+
+    Every statement starting from # is a PREPROCESSOR DIRECTIVE 
+
+    Starting character '#' lets preprocessor know that the current statement 
+    is a statement not for compiler for the preprocessor itself. 
+
+    Word followed by # is a COMMAND GIVEN BY PROGRAMMER TO PREPROCESSOR 
+
+    That word may or may not be followed by the additional syntax 
+
+#endif 
+
+#define X 
+#define X 10 
+
+#include <stdio.h>
+
+-------------------------------------------------------------
+
+#define PREPROCESSOR_SYMBOL     DEFINITION 
+
+#define ARR_SIZE    5 
+
+PREPROCESSOR_SYMBOL = ARR_SIZE 
+DEFINITION = 5 
+
+#define SUCCESS 1 
+PREPROCESSOR_SYMBOL = SUCCESS 
+DEFINITION = 1 
+
+#define LIST_DATA_NOT_FOUND 2 
+
+PREPROCESSOR_SYMBOL = LIST_DATA_NOT_FOUND 
+DEFINITION = 2 
+
+Definition of preprocessor symbol may not fit in one line 
+(depends on how long is definition, and monitor sizes etc) 
+
+We can extend definition of preprocessor over multiple lines! 
+
+#define PREPROCESSOR_SYMBOL     LINE 1 
+                                LINE 2 
+                                . 
+                                .
+                                .
+                                LINE k 
+
+When PREPROCESSOR_SYMBOL will be replaced by the PREPROCESSOR 
+it will look as follows 
+
+It will end at LINE1 
+
+Requirement 
+
+#define SYMBOL  LINE 1 
+                LINE 2 
+
+Even after you pressing Enter key after LINE 1 
+The definition of SYMBOL SHOULD NOT END. 
+
+It should consider LINE 2 as a part of definition as well. 
+
+How to disable \n 
+How to esacape the escape sequence \n 
+
+#define SYMBOL  LINE 1\
+                LINE 2 
+
+SYMBOL WILL BE REPLACED BY 
+
+LINE 1 Line 2 
+
+#-------------------------------------------------------------
+
+#define SYMBOL  ONE_LINE_DEF 
+[Enter marla adhichya line war]
+
+Multiline definition 
+
+#define SYMBOL  LINE1\
+                LINE2\
+                LINE3\
+                .
+                .
+                .
+                LINE k-1\
+                LINE k 
+
+    
+#define SYMBOL  Line 1\
+                Line 2\
+                Line 3\
+                Line 4 
+
+#----------------------------------------------------------
+[Read macro and assembly.txt file first before going ahead] 
+
+MACRO = TEXTUAL REPLACEMENT WITH PARAMTERS 
+SYMBOLIC CONSTANT = TEXTUAL REPLACEMENT 
+
+#define SYMBOL  LINE1\ 
+                LINE2\
+
+
+                LINE k-1\
+                LINE k 
+
+SYMBOL WILL BE REPLACED BY 
+
+LINE1 LINE2 LINE3 .... LINE k 
+#--------------------------------------------------------
+
+#define MACRO_NAME(P1, ...,Pn)  LINE-1\
+                                Line-2\
+                                .
+                                .
+                                .
+                                \
+                                LINE k 
+
+LINE 1 to LINE k use PARAMTERS OF MACRO namely 
+P1 .... Pn 
+
+Now if macro is used as follows 
+
+int main(void)
+{
+    MACRO_NAME(expr1, expr2, ...., exprk)
+}
+
+RESULT OF PREPROCESSING 
+
+int main(void)
+{
+      MACRO_NAME(expr1, expr2, ...., exprk)   
+}
+
+will be CONVERTED TO 
+
+int main(void)
+{
+    LINE 1 LINE 2 LINE 3 .... LINE k 
+}
+
+and EACH OCCURRENCE OF P1 to Pn in LINE1 to LINE k 
+will be repalced by 
+expr 1 to exprk 
+
+#define ADD(x, y)   ((x) + (y))
+
+int main(void)
+{
+    int a=10, b=20; 
+    ADD(a, b+5); 
+}
+
+WILL CONVERTED TO 
+((x) + (y))
+WILL CONVERTED TO 
+((a) + (b+5))
+
+1) MACRO -> USES 
+2) Conditional diretive 
+    #if #ifdef #ifndef #endif #else 
+3) Header file 
+4) Modular 

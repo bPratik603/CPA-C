@@ -1,0 +1,24 @@
+Variadic function: 
+
+A function which is capable of accepting different number of 
+actual parameter per call is known as the variadic function. 
+
+e.g. printf(); 
+
+printf() has one mandatory first parameter called as format string. 
+But actual parameters after format string can be any in number 
+and can be of any type. You can take decision about those on per call 
+basis. 
+
+printf("Hello,World\n");
+
+printf("%d, %f\n", n, f); 
+
+printf("%f %d\n", f, n); 
+
+printf("n = %d, fnum = %f, long_fnum = %lf, s_num = %hd\n", 
+        m, fnum, long_fnum, s_num); 
+
+This proves that the printf() is a variadic function. 
+You can also see that the scanf() is also a variadic function. 
+

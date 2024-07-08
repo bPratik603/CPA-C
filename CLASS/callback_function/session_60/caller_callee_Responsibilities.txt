@@ -1,0 +1,105 @@
+C : Function declaration, Function definition, Function Call. 
+You awre of the syntax of all three elements of function.
+
+#----------------------------------------------------------------------------
+
+What happens when the source code is built? 
+
+    1)  Function declaration does not take part in memory allocation. 
+        Declaration of function does not exist at assembly or machine 
+        language level. Declaration of a function is used purely by the 
+        C compiler to verify the types of actual parameters against the 
+        formal parameters. This allows caller to call the function without
+        producing the definition. 
+
+    2)  Function definition -> converted into machine language 
+        -> Machine language conversion of all functions is stored in the 
+        text section of executable file (and therefore, of process)
+
+    3)  Function call -> is always a part some function definition. 
+
+What happens at the run time? 
+
+    When the control flow reaches to function call :- 
+
+    1)  Allocate storage for formal parameters on the stack section. 
+        Initialise the storage by the actual parameter values provided 
+        in the current call. (Caller)
+
+    2)  Just before transferring the control flow to caller, a return 
+        address (address of such instruction in caller, which must be executed 
+        after returning from the current call), must stored on stack. 
+        (Caller)
+
+    3)  Just after transferring the control flow to callee,
+        Store the caller functions frame pointer on the stack. 
+        (Callee)
+
+    4)  Set the frame pointer of the callee. 
+        (Callee)
+
+    5)  Allocate storage of local variables 
+        (Callee) 
+
+#----------------------------------------------------------------------------
+
+    EXECUTE THE BODY -> OS SCHEDULAR + MICROPROCESSOR 
+
+    6)  Free the storage of local variables. 
+        (Callee)
+
+    7)  Restore the frame pointer of caller. 
+        (Callee)
+
+    8)  Free the storage allocated to formal parameters 
+
+    9)  Return (while memory locations on stack where the return 
+        address was stored are freed)
+        (Callee)
+    OR 
+
+    8)  Return  (while memory locations on stack where the return 
+        address was stored are freed)
+        (Callee)
+
+    9)  Free the storage allocated to formal parameters. 
+       
+    10) Copy the return value from processor register to left hand 
+        side variable of function call in caller code. 
+        (Caller)        
+#----------------------------------------------------------------------------
+
+10 steps: 
+    formal parameter storage freeing -> assigned to callee 
+    PASCAL CALLING CONVENTION 
+
+    formal parameter storage freeing -> assigned to caller 
+    C CALLING CONVENTION 
+
+While creating the storage for formal parameters, 
+you must follow right to left sequence. 
+i.e. 
+    Storage will be allocated first to the last formal parameter 
+    followed by second to last. 
+    followed by  third from last 
+
+
+    followed by first 
+
+#----------------------------------------------------------------------------
+
+NICOLUS WIRTH  -> TURING AWARD -> PASCAL 
+
+Designer -> PASCAL as an IDEAL PROCEDURAL 
+
+STANDARD CALLING CONVENTION
+stdcall 
+
+
+Engineer -> 
+    1)  There is only one absolute truth that 
+        there is no absolute truth! 
+
+        GOOD    BAD 
+        
+          

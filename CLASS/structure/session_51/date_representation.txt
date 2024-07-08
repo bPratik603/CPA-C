@@ -1,0 +1,30 @@
+Real Life Object = Date 
+
+Field 1 : day 
+Field 2 : month 
+Field 3 : year 
+
+struct Date 
+{
+
+}; 
+
+Field 1 : day: 
+member name: day 
+type: unsigned char 
+member: unsigned char day; 
+
+Field 2: month 
+member name: month 
+type: unsigned char month; 
+
+Field 3: year
+Member name: year 
+type: int 
+
+struct Date 
+{
+    unsigned char day; 
+    unsigned char month; 
+    int year; 
+}; 

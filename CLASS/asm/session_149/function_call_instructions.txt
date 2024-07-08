@@ -1,0 +1,6 @@
+We have to learn following instructions before we can understand the role of the prologue 
+and the epilogue in implementing the C calling convention. 
+
+1) push 2) pop 3) call 4) ret  
+
+

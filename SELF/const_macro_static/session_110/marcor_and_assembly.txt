@@ -1,0 +1,35 @@
+a, b -> global variables test 
+
+pushl   b
+pushl   a 
+call    test 
+addl    $8, %esp 
+
+p, q -> global variables test 
+
+pushl   q 
+pushl   p 
+call    test 
+addl    $8, %esp 
+
+x, y -> global variable test 
+
+pushl   y 
+pushl   x 
+call    test 
+addl    $8, %esp 
+
+.macro INVOKE_TEST(P1, P2)
+    pushl   P2 
+    pushl   P1 
+    call    teste 
+    addl    $8, %esp 
+.endm 
+
+main: 
+    INVOKE_TEST(p, q)
+    # some other logic 
+
+    INVOKE_TEST(x, y)
+
+

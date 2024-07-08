@@ -1,0 +1,135 @@
+1)  The CPU (Central Processing Unit) implements a set of operations 
+    in a hardwired fashion and each operation has a unique code assigned to 
+    it known as an OPCODE. 
+
+    Operations that are hardwired into CPU chip along with their OPCODES 
+    is a choice made by the manufacturer (or vendor) of the CPU. 
+
+2)  In order to program CPU, we must first create a data in memory. 
+    In assembly language, this is accomplished by writing the data 
+    definition statements in the read only data, data and the bss section. 
+    (data can also be allocated on the stack or the heap which is not 
+    covered yet). 
+    
+    After the creation of data the programmer must decide the CPU operations 
+    along with the sequence that will process the data. 
+    In assembly language, this will be accomplished by writing instructions 
+    in the text section. 
+
+    We must first learn the general syntax of the instruction in assembly language. 
+#-----------------------------------------------------------------------------------------
+
+General Syntax: 
+
+    LABEL_NAME: 
+        INSTRUCTION_NAME    OPERAND/OPERANDS 
+
+    [MORE THAN ONE OPERAND IS WRITTEN IN COMMA SEPARATED LIST]
+    [LABEL_NAME IS OPTIONAL]
+#------------------------------------------------------------------------------------------
+INSTRUCTION_NAME -> REPRESENTS AN ACTION TO BE PERFORMED 
+OPERAND/OPERANDS -> REPRESENT THE DATA ELEMENTS ON WHICH THE SAID ACTION 
+                    IS TO BE PERFORMED. 
+#-------------------------------------------------------------------------------------------
+Like operators in the high level programming languages, the instructions at assembly 
+level have the notion of ary. i.e. every instruction will expected fixed number of 
+operands to act on. 
+
+e.g. In C, 
+addition(+), subtraction(+), multiplication(*), division(/) are known as binary operators 
+as they required two operands to act on. 
+
+On the other hand, 
+logical not(!), bitwise not(~), subscript [], call () operators are unary operators as they 
+require one operand to act on. 
+
+Similarly, every instruction in its specification will mention the number of operands that 
+must follow it for its successful application. 
+#-----------------------------------------------------------------------------------------------
+Operands in C, could be written in two ways: 
+    1) literal operands 
+    2) variable operands 
+e.g. 
+
+int a = 10; 
+int b = 20; 
+int c; 
+
+void test(){
+    c = a + b;  // both a and b are variable operands 
+    c = a + 10; // a is a variable operand, 10 is a literal(or constant) operand 
+    c = 10 + 15; // both 10 and 15 are literal operands. 
+}
+
+Similarly, in assembly operands are of three different types. 
+
+Type 1: Immediate operands 
+Type 2: Register operands 
+Type 3: Memory operands 
+
+Type 1: Immediate operand -> CORROSSPONDS TO LITERAL OPERAND IN C. 
+Type 3: Memory operand -> CORROSSPONDS TO VARIABLE OPERAND IN C. 
+
+Type 2 Operand : Register is EXCLUSIVE TO ASSEMBLY PROGRAMMER. NO HIGH LEVEL PROGRAMMER 
+CAN HARDCODE THE REGISTERS USED IN COMPUTATION. THE COMPILER OF THAT HIGH LEVEL LANGUAGE WILL 
+CHOOSE THE REGISTERS USED TO COMPUTE THE EXPRESSIONS IN ANY GIVEN STATEMENT. 
+#-----------------------------------------------------------------------------------------------
+
+Syntax of Immediate Operand: 
+[
+    NOTE: Recall that the syntax of assembly language is decided by the assembler. 
+    Therefore, syntax of writing immediate/register/memory operands is in accordance 
+    with GNU 32 bit assembler for the Linux platform. 
+    This syntax is also known as the AT&T syntax because the GNU assembler is fundamentally 
+    developed as the open source version of the Unix assembler and the Unix was developed in 
+    the AT&T bell labs. 
+]
+
+Immediate operands are prefixed by the character $ in the AT&T syntax. 
+
+Writing integer constants as immediate operand. 
+Literal constant 10 in C would appear as $10 in assembly. 
+
+$345        # decimal 345 
+$0647       # octal 647 
+$0xa0b0c0d0 # hexadecimal a0b0c0d0 
+
+8 bit immediate operand also denoted by imm8 is 
+$0 to (2^8)-1 or $(-2^7) to (2^7)-1 in decimal, octal or hex 
+
+16 bit immediate operand also denoted by imm16 is 
+$0 to (2^16)-1  or 
+$(-2^15) to (2^15)-1 
+(in any base, decimal, octal or hex)
+
+
+32 bit immediate operand also denoted by imm32 is 
+$0 to (2^32)-1
+OR 
+$(-2^31) to (2^31)-1
+(in any base, decimal, octal or hex)
+#-------------------------------------------------------------
+Character constant (Literal ASCII Character)
+Literal character constant such as 'A' in C will look like 
+$'A' in assembly! 
+#--------------------------------------------------------------
+The address of global variables (initialized or Uninitialized)
+are constants and therefore are treated as immediate operands. 
+
+If var is a name of variable in rodata/data/bss section then 
+its address is obtained by the expression 
+$var 
+
+int var; 
+In C, address is obtained by &var;
+
+.section .bss 
+    .comm var, 4, 4 
+
+OR 
+
+.section .data 
+    var: 
+    .int    100 
+
+$var will be the base address of memory block whose name is var. 

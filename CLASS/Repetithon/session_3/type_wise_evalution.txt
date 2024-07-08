@@ -1,0 +1,258 @@
+int n; 
+type(n) == int ... annotated by programmer 
+
+int n; 
+type(n) == int 
+
+int n; 
+type(n) == int 
+
+int n; 
+type(n) == int 
+
+int n; 
+type(n) == int 
+
+////////////////////////////////////
+
+int n; 
+type(&n) == int* 
+
+int n; 
+type(&n) == int* 
+
+int n; 
+type(&n) == int* 
+
+int n; 
+type(&n) == int* 
+
+int n; 
+type(&n) == int* 
+
+//////////////////////////////
+
+int* p; 
+type(p) == int* 
+
+int* p; 
+type(p) == int* 
+
+int* p; 
+type(p) == int* 
+
+int* p; 
+type(p) == int* 
+
+int* p; 
+type(p) == int* 
+
+///////////////////////////////////////
+
+// 1 
+int n; 
+int* p; 
+
+type(&n) == type(p) == int* 
+
+therefore, 
+p = &n; // is valid 
+
+
+//2 
+int n; 
+int* p; 
+
+type(&n) == type(p) == int* 
+
+therefore, 
+p = &n; // valid 
+
+
+//3 
+int n; 
+int* p; 
+
+type(&n) == type(p) == int* 
+therefore, 
+p = &n; // valid 
+
+// 4 
+
+int n; 
+int* p; 
+
+type(&n) == type(p) == int*
+therefore, 
+p = &n; // valid 
+
+// 5 
+int n; 
+int* p; 
+type(&n) == type(p) == int* 
+therefore, 
+p = &n; // valid 
+
+///////////////////////////////////////////
+
+// 1 
+type(*p) == int
+int n; 
+int* p; 
+p = &n; 
+lhs = *p; // read from n 
+*p = rhs;// write on n 
+// 2 
+type(*p) == int 
+int n; 
+int* p; 
+p = &n; 
+lhs = *p; // read from n 
+*p = rhs; // write on n 
+
+//3 
+int n; 
+int* p; 
+type(*p) == int 
+p = &n; 
+lhs = *p; // read from n 
+*p = rhs; // write on n 
+
+// 4 
+int n; 
+int* p; 
+type(*p) == int 
+p = &n; 
+lhs = *p; // read on n 
+*p = rhs; // write on n 
+
+// 5 
+int n; 
+int* p; 
+type(*p) == int 
+p = &n; 
+lhs = *p; // read from n 
+*p = rhs; // write on n 
+
+////////////////////////////////////////////////
+// 1 
+int n; 
+int* p; 
+int** pp; 
+
+type(n) == int 
+type(p) == int* 
+type(*p) == int 
+type(pp) == int** 
+type(*pp) == int* 
+type(**pp) == int 
+
+type(&n) == int* 
+p = &n; // valid 
+
+type(&p) == int** 
+pp = &p; // valid 
+
+lhs = *pp; // read from p 
+*pp = rhs; // write on p 
+
+lhs = **pp; // read from n 
+**pp = rhs; // write on n 
+
+// 2 
+int n; 
+int* p; 
+int** pp; 
+
+type(n) == int 
+type(p) == int* 
+type(*p) == int 
+type(pp) == int** 
+type(*pp) == int* 
+type(**pp) == int 
+
+type(&n) == int* 
+p = &nl // valid 
+
+type(&p) == int** 
+pp = &p; // valid 
+
+lhs = *pp; // read from p 
+*pp = rhs; // write on p 
+
+lhs = **pp; // read from n 
+**pp = rhs; // write on n  
+
+// 3 
+int n; 
+int* p; 
+int **pp; 
+
+type(n) == int 
+type(p) == int* 
+type(*p) == int 
+type(pp) == int** 
+type(*pp) == int* 
+type(**pp) == int 
+
+type(&n) == int* 
+p = &n; // valid 
+
+type(&p) == int** 
+pp = &p; // valid 
+
+lhs = *pp; // read from p 
+*pp = rhs; // write on p 
+
+lhs = **pp; // read from n 
+**pp = rhs; // write on n 
+
+
+// 4 
+int n; 
+int* p; 
+int** pp; 
+
+type(n) == int 
+type(p) == int* 
+type(*p) == int 
+type(pp) == int** 
+type(*pp) == int* 
+type(**pp) == int 
+
+type(&n) == int* 
+p = &n; // valid 
+
+type(&p) == int** 
+pp = &p; // valid 
+
+lhs = *pp; // read from p 
+*pp = rhs; // write on p 
+
+lhs = **pp; // read from n 
+**pp = rhs; // write on n 
+
+
+//  5 
+int n; 
+int* p; 
+int** pp; 
+
+type(n) == int 
+type(p) == int* 
+type(*p) == int 
+type(pp) == int** 
+type(*pp) == int* 
+type(**pp) == int 
+
+type(&n) == int* 
+p = &n; // valid 
+
+type(&p) == int** 
+pp = &p; // valid 
+
+lhs = *pp; // read from p 
+*pp = rhs; // write on p 
+
+lhs = **pp; // read from n 
+**pp = rhs; // write on n 

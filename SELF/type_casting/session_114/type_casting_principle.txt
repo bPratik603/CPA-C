@@ -1,0 +1,79 @@
+Principle: The meaning of operator is based on the type of its operands. 
+
+[The semantics of operator are evaluated in the context of types of their operand]
+
+Example: 
+    Arithemtic and Logic Operator: Representative example: addition operator. 
+
+    int a = 10, b = 20, c; 
+
+    int main(void) 
+    {
+        c = a + b; 
+    }
+
+    a: int 
+    b: int 
+    Addition operator is fulfilled by CPU instruction add 
+    because its operands are ints. 
+
+    CPU contains a sub-unit known as ALU = artihemtic and logic unit 
+    It is capable for performing arithemtic and logical operations on 
+    integer data (not floating point data)
+
+    CPU instruction 'add' will eventually add the contents of memory locations 
+    whose names are 'a' and 'b'. 
+
+    float a=1.1, b=2.2, c; 
+
+    int main(void) 
+    {
+        c = a + b; 
+    }
+
+    Here type(a) = float, type(b) = float. 
+    CPU instruction 'add' implemented in sub-unit ALU cannot add a and b. 
+    We must use another subunit of processor chip known as FPU(floating point unit)
+    FPU instruction 'fadd' is capable of adding floating point data. 
+
+    Now its C compiler's responsibility to examine types of operands of addition operator 
+    and generate the approporate code accordingly (more elaborately, its a talk of C compiler 
+    to generate an assembly code having CPU 'add' instruction when type(a) and type(b) is integer 
+    and generate an assembly code having FPU 'fadd' instruction when type(a) and type(b) is 
+    floating point)
+
+-------------------------------------------------------------------------------------------------
+
+There are five operators in C related to data movement (or data access)
+1) assignment operator lhs = rhs; 
+2) subscript operator, arr[i]; 
+3) Dereference operator, *ptr 
+4) dot and arrow operator, instance_of_structure.member_name, ptr_to_struture->mem_name 
+
+Apart from that C programming language supports pointer arithmetic. 
+
+p + k (pointer and integer can be added together) 
+p - k (an integer can be subtracted from pointer)
+p1 - p2(a pointer can be subtracted from another pointer)
+
+All these operators are sensitive to (means their meaning depends on) the types of their 
+operands. Examining this dependency PLAYS FUNDAMENTAL ROLE IN UNDERSTANDING TYPE CASTING. 
+
+-------------------------------------------------------------------------------------------------
+struct T { /* members */ 
+    mem; 
+}; 
+
+inT.mem 
+
+p1 = 2000 
+p2 = 1000 
+
+p1 - p2 
+
+
+2000-1000
+
+1000/sizeof(int)
+
+1000/4 = 250 

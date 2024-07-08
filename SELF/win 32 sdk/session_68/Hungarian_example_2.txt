@@ -1,0 +1,19 @@
+#include <Windows.h> 
+#include <stdio.h> 
+#include <stdlib.h> 
+
+typedef struct tagDATE
+{
+    int iDay; 
+    int iMonth; 
+    int iYear; 
+}DATE, *PDATE, **PPDATE;
+
+PDATE GetDateInstance(int iInitDay, int iInitMonth, int iInitYear); 
+void ReleaseDate(PPDATE ppDate); 
+int GetDay(PDATE pDate); 
+int GetMonth(PDATE pDate); 
+int GetYear(PDATE pDate); 
+void SetDay(PDATE pDate, int iNewDay); 
+void SetMonth(PDATE pDate, int iNewMonth); 
+void SetYear(PDATE pDate, int iNewYear); 

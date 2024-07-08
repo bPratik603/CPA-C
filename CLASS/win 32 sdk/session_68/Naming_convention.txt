@@ -1,0 +1,151 @@
+Code readable: 
+    1) variable name that should indicate the intension of the entity being named. 
+    2) This often requires help of more than one english word 
+    3) 
+        void* calloc(unsigned long long m, unsigned long long n); 
+        number of elements 
+        size per element 
+
+        Linux Notation: 
+            number_of_elements 
+            size_per_element 
+
+            void* calloc(size_t number_of_elements, size_t size_per_element); 
+
+        तारतम्य नीरक्षीरविवेक 
+
+        Windows Notation: Hungarian Notation: Charles Simoni : 
+            Data Variable Name: type Name 
+                Name :  Multiple English Words 
+                        Title Case: uNumberOfElements
+                        cbSizePerElement 
+                        char cAns; 
+                        int iCnt; 
+                        static TCHAR szAppName[5]; 
+                        LPSTR lpCmdLine; 
+                        int iShowCmd; 
+                        int nShowCmd; 
+                        
+            Function Variable Name: 
+                TITLE CASE 
+                
+                ZeroMemory(); 
+                LoadCursor() 
+                LoadIcon() 
+                GetStockObject(); 
+                RegisterClassEx(); 
+                CreateWindowEx(); 
+                ShowWindow();
+                UpdateWindow(); 
+                GetMessage(); 
+                TranslateMessage(); 
+                DispatchMessage(); 
+                GetTextMetrics();
+                GetDC(); 
+                BeginPaint(); 
+                EndPaint();
+                PostQuitMessage(); 
+                DefWindowProc(); 
+
+            Structure 
+
+                struct tagDate
+                {
+                    int day; 
+                    int month; 
+                    int year; 
+                }; 
+
+                typedef struct tagDate DATE; 
+                typedef DATE* PDATE; 
+
+                Date.h 
+                typedef struct tagDate
+                {
+                    INT iDay; 
+                    INT iMonth; 
+                    INT iYear; 
+                }DATE, *PDATE, *LPDATE; 
+
+                WNDCLASSEX 
+
+                typedef struct tagWNDCLASSEX 
+                {
+
+                }WNDCLASSEX, *PWNDCLASSEX;
+
+                WNDCLASSEX wnd; 
+
+                PAINTSTRUCT 
+
+                typedef struct tagPAINTSTRUCT 
+                {
+
+                }PAINTSTRUCT, *PPAINTSTRUCT;
+
+                PAINTSTRUCT ps;   
+
+    Camel Notation: 
+
+        int numberOfElements; 
+        int sizePerElement; 
+
+        struct Date myBirthDate; 
+
+        int getDay(); 
+        int getMonth(); 
+        int getYear(); 
+
+        void setDay(); 
+        void setMonth(); 
+        void setYear(); 
+
+#------------------------------------------------
+
+PROJECT SPECIFIC 
+
+for(i = 0; i < N; ++i)
+{
+    for(j = 0; j < N; ++j)
+    {
+        switch(k)
+        {
+            case 1: 
+                if()
+                {
+
+                }
+                break; 
+
+        }
+    }
+}
+
+for(i = 0; i < N; ++i){
+    for(j = 0; j < N; ++j){
+        switch(k){
+            case 1: 
+                if(cond){
+
+                }
+        }
+    }
+}
+
+/* KERNIGHAN & RITCHIE */ 
+for(i = 0; i < N; ++i){
+
+}
+
+JET BRAINS : 
+
+public class HelloWorld{
+    public static void main(String[] args){
+        System.out.println("Hello, Java World"); 
+    }
+}
+
+def main():
+    print("Hello")
+
+main()

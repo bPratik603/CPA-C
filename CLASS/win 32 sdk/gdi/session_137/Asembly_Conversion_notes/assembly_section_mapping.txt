@@ -1,0 +1,6 @@
+Global initialized variables = data setion 
+global uninitialized variables = bss section 
+local static variables (initialized) = data section 
+local static variables (uninitialized) = bss section 
+all strings + local static & const + global const = rodata section 
+all data manipulation statements = text section 

@@ -1,0 +1,10 @@
+extern int n; 
+
+extern drop kela 
+
+int n;  
+
+int n; is a data definition statement 
+
+
+void f1(void); 

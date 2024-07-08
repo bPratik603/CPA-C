@@ -1,0 +1,62 @@
+Real Life Object Name: Debit Card 
+
+What are the information fields that together describe the debit card? 
+
+Field 1: Card Holder Name 
+Field 2: Card Number 
+Field 3: CVV 
+Field 4: Valid thru Date 
+Field 5: Expirey Date 
+Field 6: Card Vendor  
+
+Real Life Object = struct in Programming 
+
+Step 1 -> Select a name for structure. 
+
+struct DebitCard 
+{
+
+}; 
+
+Step 2 ->   For every field design a member. 
+            Member design = Name of member + type of member 
+
+Field 1 : Card Holder Name 
+Name of member: holder_name 
+Type: Character array of length 128
+
+Member: char holder_name[64]; 
+
+
+Field 2: Card Number 
+Name of member: card_number; 
+Type: unsigned long long 
+
+Member: unsigned long long card_number; 
+
+Field 3: CVV 
+
+member Name: card_cvv 
+Type: unsigned short 
+
+Member: unsigned short card_cvv
+
+Field 4: Valid Through Date: 
+
+Name: card_valid_thru_date; 
+Type: ?? No built in type is fit 
+
+[Refer date_representation.txt]
+Type: struct Date 
+
+member -> struct Date card_valid_thru_date; 
+
+Field 5: Expirey Date 
+Member Name: card_expirey_date; 
+Type: struct Date 
+Member: struct Date card_expirey_date; 
+
+Field 6: Vendor Name 
+Member Name: card_vendor; 
+Type: Character array of length 28 
+Member -> char card_vendor[28]; 

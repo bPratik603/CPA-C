@@ -1,0 +1,45 @@
+Callback function: 
+    As we discussed, the kernel (OS) / the compiler or the interpreter, 
+    and the libraries are sources of built in functionality. 
+
+    Application making a call to these functions is a routine activity. 
+    But the OS or the compiler or the library making a call to a function 
+    implemented in program source code is a NOVELTY. 
+
+    Such functions are called as CALLBACK functions. 
+    Callback functions have following properties / characteristic feature. 
+
+    1)  Callback functions are ALWAYS IMPLEMENTED by the programmer. 
+        They are ALMOST always called by external entity such as 
+        OS / compiler / library. Seldom (=rarely) programming logic may 
+        requires us to put an explicit call to the callback function. 
+
+
+    2)  The body of callback function is always determined by the programmer. 
+        But the header of the callback function is fully or partially controlled 
+        by the external entity (os/compiler/library) which is set to call the function. 
+
+        What are the components of header of the function? 
+            1)  Type of return value of function if any or void. 
+            2)  Optional calling convention. 
+            3)  Function Name. 
+            4)  Number of formal parameters 
+            5)  Type of each formal parameter. 
+
+        When the function is callback at LEAST one of the five points is controlled 
+        by the external entity which calls the callback function! 
+
+    3)  Address of callback function is shared with the external caller which is set 
+        to call it! 
+
+    4)  Callback function is called by external entity on PRE-DEFINED event or 
+        set of events! 
+        (the application programmer = you, is often incapable of detecting those 
+        events. Therefore, what does he/she do? Write a response to an event 
+        in the form of callback function and registers that functions address 
+        as a handler to an event or set of events to the entity which is CAPABLE 
+        of detecting those events). 
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+Event Driven Programming: 
+

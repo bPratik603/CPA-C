@@ -1,0 +1,13 @@
+f : A -> B 
+
+Every element in set A must be paired with exactly one element in set B. 
+Such pairing is known as mapping of set A into set B. 
+
+Or it is also known as function from set A to set B. 
+
+What is not allowed? 
+
+1)  It is not allowed to have an element in set A not be paired with any element 
+    in set B. 
+
+2) Element in set A is not allowed to be paired with more than one element in set B. 

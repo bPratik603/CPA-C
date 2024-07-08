@@ -1,0 +1,53 @@
+#define DEFINE_NODE(type)   struct node_##type\
+                            {\
+                                type data;\
+                                struct node_##type* prev;\
+                                struct node_##type* next;\
+                            } 
+
+DEFINE_NODE(int); 
+
+Step 1: 
+
+struct node_##type\
+                            {\
+                                type data;\
+                                struct node_##type* prev;\
+                                struct node_##type* next;\
+                            }; 
+
+Step 2: 
+
+struct node_##int\
+                            {\
+                                int data;\
+                                struct node_##int* prev;\
+                                struct node_##int* next;\
+                            }; 
+                            
+Step 3: Replace ## by Concatenation 
+
+struct node_int
+{
+    int data; 
+    struct node_int* prev; 
+    struct node_int* next; 
+}; 
+
+#---------------------------------------------------------------
+
+struct head_node
+{
+    struct head_node* prev; 
+    struct head_node* next; 
+}; 
+
+struct head_node v = {&v, &v}; 
+
+#define INIT_HEAD(v)    struct head_node v = {&v, &v}; 
+
+int main(void)
+{
+    INIT_HEAD(task_list_head); 
+    INIT_HEAD(lru_head); 
+}

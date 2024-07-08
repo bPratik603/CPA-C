@@ -1,0 +1,33 @@
+Default control flow: Serial 
+
+main: 
+	Instruction 1 
+	Instruction 2 
+	Instruction 3 
+
+	Instruction 10 
+
+
+OS system loader -> program load -> control flow -> _start -> __libc_main() -> main() 
+
+
+address of first byte of Instruction 1 is loaded in eip register.
+
+eip <- eip + sizeof(instruction pointed by eip) 
+
+PROCESSOR DESIGN: 
+	BOOT 
+	
+	Fetch Instruction from eip
+	Decode 
+	Execute it 
+
+	SHUTDOWN
+#-------------------------------------------------
+My daily algorithm 
+	Wake up 
+	Be awesome 
+	Goto sleep 
+#-------------------------------------------------
+
+

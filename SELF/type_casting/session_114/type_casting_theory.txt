@@ -1,0 +1,42 @@
+Type Inference: 
+    Inference [English Meaning] : Conclusion based on observation. 
+
+C compiler 
+LHS, RHS expr 
+
+*(p+i) = a[j] + n; 
+
+a[j] + n -> RHS expr 
+*(p+i) -> LHS expr 
+
+expr: Valid combination of operators and operands. 
+
+//////////////////////////////////////////////////////////////////
+
+type(a) = int [] 
+type(a[i]) = int 
+type(n) = int 
+
+type(a[i] + n) = int 
+
+Type Inference Algorithm. 
+
+Let L be a language with Grammar G. Let expr be an expression correct with respect to Grammar G. 
+Assuming that the L is statically typed language, its compiler C is said to have type inference 
+capabilities if it can infer the type of any such arbitrary expr at compile time. 
+[This inference is based on types of operands involed in the expr, and operators and the 
+meaning of the operator in the context of type. Although values of operands are not known 
+at compile time, their types are known and that is sufficent of type inferencing]
+
+Every expression has inferred type Ti. 
+
+c = a + b; 
+
+a + b has inferred type. 
+if a and b are integers then Ti of a + b would be integer. 
+
+--------------------------------------------------------------------------------------------------
+
+Def: Type Casting: Type casting is an ability given by C / C++ compiler to a programmer 
+to override the inferred type of the expression. [Note that this ability does not change 
+the evaluation of expression and its inferred type]. 

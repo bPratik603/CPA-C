@@ -1,0 +1,69 @@
+Real Life Object Name: Watch 
+
+What are the information fields that together describe the debit card? 
+
+Field 1:  Case Diameter
+Field 2:  Band colour
+Field 3:  Band material type
+Field 4:  Model name 
+Field 5:  Country of origin 
+Field 6:  About this itom
+Field 7:  Description
+Field 8:  Manufacture
+Field 9:  Packer
+Field 10: Importer
+Field 11: Itom Dimensions
+Field 12: Net quntity
+Field 13: Generic name
+
+Real Life Object = struct in Programming 
+
+Step 1 -> Select a name for structure. 
+
+struct Watch
+{
+
+}; 
+
+Step 2 ->   For every field design a member. 
+            Member design = Name of member + type of member 
+
+Field 1 : Case Diamter Name 
+Name of member: Diameter_Unit_Name
+Type: Character array of length 100
+
+Member: char Diameter_Unit_Name[100]; 
+
+
+Field 2:  Band colour
+Name of member: Colour_Name; 
+Type: Character array of length 100
+
+Member: char Colour_Name[100]; 
+
+Field 3: Band Material Type 
+
+member Name: Material_Type_Name
+Type: Character array of length 100
+
+Member: char Material_Type_Name[100]
+
+Field 4: Valid Through Date: 
+
+Name: card_valid_thru_date; 
+Type: ?? No built in type is fit 
+
+[Refer date_representation.txt]
+Type: struct Date 
+
+member -> struct Date card_valid_thru_date; 
+
+Field 5: Expirey Date 
+Member Name: card_expirey_date; 
+Type: struct Date 
+Member: struct Date card_expirey_date; 
+
+Field 6: Vendor Name 
+Member Name: card_vendor; 
+Type: Character array of length 28 
+Member -> char card_vendor[28]; 

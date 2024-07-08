@@ -1,0 +1,29 @@
+LINUX KERNEL HAL 
+
+linux-5.1.0 
+    kernel  -> process management 
+    mm      -> arch independent mm 
+    fs      -> file systems 
+    drivers -> device drivers 
+
+PROCESSOR SPECIFIC THINGS 
+
+HARDWARE KADUN KAAY KAAY PAHIJE? 
+
+func1 
+
+func2 
+
+func3 
+
+
+funck 
+
+arch 
+    x86 
+        source files 
+    x64 
+        source files 
+    arm 
+    etc 
+

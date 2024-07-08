@@ -1,0 +1,26 @@
+char -> .ascii (1) 
+unsigned char -> .byte (1)  
+short / unsigned short -> .value (2)  
+int / unsigned int -> .int (4) 
+long / unsigned long -> .long (4) 
+
+If you have long long or unsigned long long intger then first 
+represent it in HEXADECIMAL NOTATION. Prefix required zeros 
+
+unsigned long long int n = 0xa0b0; 
+
+0x000000000000a0b0 
+
+0xDDDDDDDD DDDDDDDD
+  UPPER    LOWER 
+
+n: 
+.long   LOWER 
+.long   UPPER 
+
+
+n: 
+.long   0x0000a0b0
+.long   0x00000000 
+
+

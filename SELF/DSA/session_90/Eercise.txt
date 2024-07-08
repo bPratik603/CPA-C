@@ -1,0 +1,7 @@
+Write a plan for 
+    1) Calculating the length of the string. 
+    2) Copying source string into destination string. 
+
+
+
+

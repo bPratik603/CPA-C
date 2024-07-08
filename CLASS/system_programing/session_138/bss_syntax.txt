@@ -1,0 +1,31 @@
+Global Uninitialized data -> BSS Section 
+
+1) How to create a BSS section in GNU 32 Bit assmbly source file? 
+
+.section .bss 
+
+2) How to allocate data in the bss section? 
+
+One has to use a directive named as .comm 
+
+General Syntax of the .comm directive 
+
+.comm   variable_name, memory_size[, memory_alignment]
+
+comm -> short form of common memory area. 
+Memory allocated to global variables is accessible to all functions, 
+therefore, it is a common to all functions and therefore, called 
+as the common memory area. 
+
+.comm   num, 4 
+
+.comm   num, 4, 4 
+
+BSS -> Block Started by Symbol 
+
+// C Code 
+
+int num; 
+
+.section .bss 
+    .comm   num, 4, 4 

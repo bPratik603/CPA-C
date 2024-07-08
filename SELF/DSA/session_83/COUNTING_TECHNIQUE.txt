@@ -1,0 +1,13 @@
+Let a and b be two natural numbers such that a < b. 
+To count number of integers between a and b we must 
+consider following four scenarios. 
+
+all k such that a <= k <= b deonted as [a, b]
+all k such that a < k <= b denoted as (a, b] 
+all k such that a <= k < b denoted as [a, b)
+all k such that a < k < b denoted as (a, b)
+
+Numbers between [a, b] : b - a + 1
+Numbers between (a, b] : b - a
+Numbers between [a, b) : b - a 
+Numbers between (a, b) : b - a - 1

@@ -1,0 +1,40 @@
+wWinMain -> UNICODE COMPLIANT VERSION 
+WinMain 
+main
+wmain 
+
+char c; // sizeof(char) == 1
+
+wchar_t c; // sizeof(wchar_t) == 2
+
+16 bit 
+
+0 to 65535 -> STANDARD -> LOCALE CONTROL 
+
+LOCALE -> ENVIRONMENTAL VARIABLE
+
+            CUI         GUI 
+
+ascii       main        WinMain 
+
+UNICODE     wmain       wWinMain 
+
+CUI ASCII : mainCRTStartup() 
+            wmainCRTStartup() 
+            WinMainCRTStartup() 
+            wWinMainCRTStartup() 
+
+#ifdef UNICODE 
+    #define main wmain 
+    #define WinMain wWinMain 
+#else 
+    #define main main 
+    #define WinMain WinMain 
+#endif 
+
+CUI ASCII   -> mainCRTStartup() -> main() 
+CUI UNICDE  -> wmainCRTStartup() -> wmain() 
+GUI ASCII   -> WinMainCRTStartup() -> WinMain() 
+GUI UNICODE -> wWinMainCRTStartup() -> wWinMain()
+
+char* p = "Hello"; 

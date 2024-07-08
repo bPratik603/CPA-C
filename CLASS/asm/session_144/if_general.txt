@@ -1,0 +1,28 @@
+int main(void){
+
+	if(lhs R rhs)
+	{
+		BLOCK-if; 
+	}
+
+	OUT STATEMENT; 
+}
+
+
+main: 
+
+	# one or more instruction 
+	# valuate lhs in r1 
+	movl	lhs, %r1 
+	# using one or more instructions 
+	# evaluate rhs in r2 
+	movl	rhs, r2 
+
+	cmpl	r2, r1 
+	jnR 	out
+
+	BLOCK - if ASSEMBLY 
+
+out: 
+	OUT STATEMENTS ASSEMBLY 
+

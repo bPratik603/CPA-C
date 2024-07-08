@@ -1,0 +1,40 @@
+struct Date
+{
+    //   
+}; 
+
+union Date
+{
+    // 
+}; 
+
+enum Date
+{
+
+}; 
+
+struct Date d; 
+union Date d; 
+enum Date d; 
+
+/* 
+    How a data type name is going to look like in C? 
+
+    Builtin Name 
+    struct Name; 
+    union Name; 
+    enum Name; 
+*/
+
+Process 
+Thread 
+
+int get_id(); 
+
+typedef int pid_t; 
+
+pid_t get_id(); 
+
+typedef int tid_t; 
+
+tid_t get_id(); 

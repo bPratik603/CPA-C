@@ -1,0 +1,12 @@
+void empty_function(){
+
+}
+
+empty_function: 
+    pushl   %ebp 
+    movl    %esp, %ebp 
+
+
+    movl    %ebp, %esp 
+    popl    %ebp 
+    ret 

@@ -1,0 +1,35 @@
+c = a + b; 
+
+movl 	a, %eax 
+addl	b, %eax 
+movl 	%eax, c 
+
+#---------------------------
+
+movl 	-4(%ebp), %eax 
+addl	-8(%ebp), %eax 
+movl	%eax, -12(%ebp) 
+
+
+.globl compute_1 
+.type 	compute_1, @function 
+
+compute_1: 
+	pushl	%ebp 
+	movl	%esp, %ebp 
+	subl	$12, %esp 
+
+	movl	-4(%ebp), %eax 
+	addl	-8(%ebp), %eax 	# eax == L1 + L2 
+
+	movl	-4(%ebp), %edx 
+	subl 	-8(%ebp), %edx 	# edx == L1 - L2 
+
+	movl	%edx, %ebx 
+	movl	$0, %edx 
+	mull	%edx 
+
+	movl	%ebp, %esp 
+	popl	%ebp 
+	ret 
+

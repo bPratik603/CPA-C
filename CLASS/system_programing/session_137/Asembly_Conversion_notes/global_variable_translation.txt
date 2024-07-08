@@ -1,0 +1,12 @@
+GLOBAL DIRECTIVE SYNTAX: 
+
+.globl variable_name 
+
+action taken by assembler: 
+    variable_name becomes project wide global in case of 
+    multi-file project. 
+
+without .globl directive, variable_name would be global to file 
+but will remain inaccessible in other files! 
+
+.globl inum 

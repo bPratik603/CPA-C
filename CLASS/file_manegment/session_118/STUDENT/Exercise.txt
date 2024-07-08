@@ -1,0 +1,6 @@
+We have used an insertion sort for implementing the generic sort. 
+Use quick sort instead. 
+Then you will have implemented a function in library. 
+
+You can repeat the exercise with merge sort as well! 
+
